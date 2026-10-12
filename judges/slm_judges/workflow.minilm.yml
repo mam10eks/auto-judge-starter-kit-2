@@ -1,0 +1,8 @@
+judge_class: "judges.slm_judges.minilm:MinilmJudge"
+
+create_nuggets: false
+create_qrels: false
+judge: true
+
+settings:
+  filebase: "{_name}"
