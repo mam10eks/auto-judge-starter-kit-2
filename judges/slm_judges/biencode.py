@@ -9,7 +9,7 @@ BERT_SPEC = LeaderboardSpec(measures=(
     MeasureSpec("SIM_SCORE", description="Average Dot Product similarity between topic and individual sentences"),
 ))
 
-class MinilmJudge:
+class BiencoderJudge:
     def evaluate(self, model, topic, sentences):
         if not topic or not sentences:
             return 0.0
@@ -40,7 +40,7 @@ class MinilmJudge:
         expected_topic_ids: List[str] = list(topics.keys())
 
         model = SentenceTransformer(
-            "sentence-transformers/all-MiniLM-L6-v2",
+            kwargs['sentence_model'],
             device='cuda',
         )
 

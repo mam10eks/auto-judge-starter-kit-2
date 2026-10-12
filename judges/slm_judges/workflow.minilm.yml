@@ -1,8 +1,9 @@
-judge_class: "judges.slm_judges.minilm:MinilmJudge"
+judge_class: "judges.slm_judges.biencode:BiencoderJudge"
 
 create_nuggets: false
 create_qrels: false
 judge: true
 
 settings:
+  sentence_model: "sentence-transformers/all-MiniLM-L6-v2"
   filebase: "{_name}"
